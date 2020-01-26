@@ -16,15 +16,24 @@ export default class App extends Component {
     }
 
     this.state = {
-      table: [...array]
+      table: [...array],
+      number: 0
     };
 
     this.onClear = this.onClear.bind(this);
     this.onCheck = this.onCheck.bind(this);
+    this.onChangeNumber = this.onChangeNumber.bind(this);
+    this.onValueChange = this.onValueChange.bind(this);
+  }
+
+  onChangeNumber(number) {
+    console.log("Changing number to", number);
+    this.setState({ number: number });
   }
 
   onCheck() {
     console.log("Checking the table...");
+    this.setState({ number: 0 });
     //TODO: get string of the hard number values
     //TODO: solve the sudoku
     //TODO: compare given numbers to the solution and mark wrong numbers
@@ -37,7 +46,16 @@ export default class App extends Component {
     for (let i = 0; i < 81; i++) {
       array.push("0");
     }
-    this.setState({ table: [...array] });
+    this.setState({ table: [...array], number: 0 });
+  }
+
+  onValueChange(index, number) {
+    console.log("Changing the value of", index, "to", number);
+
+    let newTable = [...this.state.table];
+    newTable[index] = number;
+    console.log(newTable);
+    this.setState({ table: newTable });
   }
 
   render() {
@@ -53,8 +71,17 @@ export default class App extends Component {
         <code>
           <pre>{JSON.stringify(s, null, 2)}</pre>
         </code>
-        <Buttons onClear={this.onClear} onCheck={this.onCheck} />
-        <SudokuTable table={this.state.table} />
+        <Buttons
+          onChangeNumber={this.onChangeNumber}
+          onClear={this.onClear}
+          onCheck={this.onCheck}
+          number={this.state.number}
+        />
+        <SudokuTable
+          table={this.state.table}
+          onValueChange={this.onValueChange}
+          number={this.state.number}
+        />
       </div>
     );
   }

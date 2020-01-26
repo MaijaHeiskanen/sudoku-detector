@@ -3,11 +3,20 @@ import "./../../styles/Table.css";
 import "./../../styles/App.css";
 
 export default class SudokuTable extends Component {
+  onValueChange(index, number) {
+    this.props.onValueChange(index, number);
+  }
+
   render() {
+    console.log("this.props.table:", this.props.table);
     let cells = [];
     for (let i = 0; i < this.props.table.length; i++) {
       cells.push(
-        <button key={i} id={i}>
+        <button
+          key={i}
+          id={i}
+          onClick={e => this.onValueChange(i, this.props.number)}
+        >
           {this.props.table[i]}
         </button>
       );

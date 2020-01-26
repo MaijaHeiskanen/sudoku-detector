@@ -6,7 +6,6 @@ export default class Buttons extends Component {
     super(props);
 
     this.state = {
-      number: 0,
       isOwn: false,
       activeColor: "lightblue",
       notActiveColor: "gray"
@@ -19,17 +18,15 @@ export default class Buttons extends Component {
   }
 
   changeNumber(number) {
-    console.log("Changing number to", number);
-    this.setState({ number: number });
+    this.props.onChangeNumber(number);
   }
 
   onClear() {
-    this.setState({ number: 0 });
+    this.setState({ isOwn: false });
     this.props.onClear();
   }
 
   onCheck() {
-    this.setState({ number: 0 });
     this.props.onCheck();
   }
 
@@ -46,7 +43,7 @@ export default class Buttons extends Component {
             <button
               className="button"
               style={
-                number === this.state.number
+                number === this.props.number
                   ? { backgroundColor: this.state.activeColor }
                   : { backgroundColor: this.state.notActiveColor }
               }
@@ -57,7 +54,7 @@ export default class Buttons extends Component {
             <button
               className="button"
               style={
-                number + 1 === this.state.number
+                number + 1 === this.props.number
                   ? { backgroundColor: this.state.activeColor }
                   : { backgroundColor: this.state.notActiveColor }
               }
@@ -68,7 +65,7 @@ export default class Buttons extends Component {
             <button
               className="button"
               style={
-                number + 2 === this.state.number
+                number + 2 === this.props.number
                   ? { backgroundColor: this.state.activeColor }
                   : { backgroundColor: this.state.notActiveColor }
               }
@@ -86,10 +83,26 @@ export default class Buttons extends Component {
     return (
       <div className="Buttons">
         <div>
-          <button className="typeButton" onClick={() => this.changeType(false)}>
+          <button
+            style={
+              !this.state.isOwn
+                ? { backgroundColor: this.state.activeColor }
+                : { backgroundColor: this.state.notActiveColor }
+            }
+            className="typeButton"
+            onClick={() => this.changeType(false)}
+          >
             Hard number
           </button>
-          <button className="typeButton" onClick={() => this.changeType(true)}>
+          <button
+            style={
+              this.state.isOwn
+                ? { backgroundColor: this.state.activeColor }
+                : { backgroundColor: this.state.notActiveColor }
+            }
+            className="typeButton"
+            onClick={() => this.changeType(true)}
+          >
             My number
           </button>
         </div>
