@@ -50,11 +50,10 @@ export default class App extends Component {
   }
 
   onValueChange(index, number) {
-    console.log("Changing the value of", index, "to", number);
+    console.log("Changing the value of index", index, "to number", number);
 
     let newTable = [...this.state.table];
     newTable[index] = number;
-    console.log(newTable);
     this.setState({ table: newTable });
   }
 

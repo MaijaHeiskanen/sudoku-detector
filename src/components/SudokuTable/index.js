@@ -8,7 +8,6 @@ export default class SudokuTable extends Component {
   }
 
   render() {
-    console.log("this.props.table:", this.props.table);
     let cells = [];
     for (let i = 0; i < this.props.table.length; i++) {
       cells.push(
