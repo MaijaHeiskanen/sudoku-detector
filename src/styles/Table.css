@@ -1,9 +1,4 @@
-.SudokuTable {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sudokuTable {
   padding-top: 10px;
 }
 
@@ -22,4 +17,15 @@ th {
   border-style: none;
   background-color: #282c34;
   padding: 0px;
+}
+
+.Table-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(2vmin);
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
