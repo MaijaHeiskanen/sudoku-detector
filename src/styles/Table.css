@@ -7,9 +7,19 @@
   padding-top: 20px;
 }
 
-table,
-th,
-td {
-  border: 1px whitesmoke;
+tr,
+table {
+  padding: 0px;
+}
+
+th {
+  border: 1px solid #282c34;
   border-collapse: collapse;
+  background-color: rgb(38, 159, 175);
+}
+
+.apuva {
+  border-style: none;
+  background-color: #282c34;
+  padding: 0px;
 }

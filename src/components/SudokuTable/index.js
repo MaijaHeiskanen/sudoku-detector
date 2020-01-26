@@ -6,7 +6,7 @@ export default class SudokuTable extends Component {
     return (
       <table className="SudokuTable">
         <tr>
-          <th>
+          <th className="apuva">
             <tr>
               <th>1</th>
               <th>2</th>
@@ -23,7 +23,7 @@ export default class SudokuTable extends Component {
               <th>9</th>
             </tr>
           </th>
-          <th>
+          <th className="apuva">
             <tr>
               <th>1</th>
               <th>2</th>
@@ -40,60 +40,7 @@ export default class SudokuTable extends Component {
               <th>9</th>
             </tr>
           </th>
-          <th>
-            <tr>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-            </tr>
-            <tr>
-              <th>4</th>
-              <th>5</th>
-              <th>6</th>
-            </tr>
-            <tr>
-              <th>7</th>
-              <th>8</th>
-              <th>9</th>
-            </tr>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            <tr>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-            </tr>
-            <tr>
-              <th>4</th>
-              <th>5</th>
-              <th>6</th>
-            </tr>
-            <tr>
-              <th>7</th>
-              <th>8</th>
-              <th>9</th>
-            </tr>
-          </th>
-          <th>
-            <tr>
-              <th>1</th>
-              <th>2</th>
-              <th>3</th>
-            </tr>
-            <tr>
-              <th>4</th>
-              <th>5</th>
-              <th>6</th>
-            </tr>
-            <tr>
-              <th>7</th>
-              <th>8</th>
-              <th>9</th>
-            </tr>
-          </th>
-          <th>
+          <th className="apuva">
             <tr>
               <th>1</th>
               <th>2</th>
@@ -112,7 +59,7 @@ export default class SudokuTable extends Component {
           </th>
         </tr>
         <tr>
-          <th>
+          <th className="apuva">
             <tr>
               <th>1</th>
               <th>2</th>
@@ -129,7 +76,7 @@ export default class SudokuTable extends Component {
               <th>9</th>
             </tr>
           </th>
-          <th>
+          <th className="apuva">
             <tr>
               <th>1</th>
               <th>2</th>
@@ -146,7 +93,60 @@ export default class SudokuTable extends Component {
               <th>9</th>
             </tr>
           </th>
-          <th>
+          <th className="apuva">
+            <tr>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+            </tr>
+            <tr>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+            </tr>
+            <tr>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+            </tr>
+          </th>
+        </tr>
+        <tr>
+          <th className="apuva">
+            <tr>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+            </tr>
+            <tr>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+            </tr>
+            <tr>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+            </tr>
+          </th>
+          <th className="apuva">
+            <tr>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+            </tr>
+            <tr>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+            </tr>
+            <tr>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+            </tr>
+          </th>
+          <th className="apuva">
             <tr>
               <th>1</th>
               <th>2</th>
