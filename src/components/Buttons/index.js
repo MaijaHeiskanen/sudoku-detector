@@ -109,10 +109,21 @@ export default class Buttons extends Component {
         <div>
           {numberButtons}
           <button className="clearButton" onClick={() => this.onClear()}>
-            clear
+            Clear all
+          </button>
+          <button
+            className="button"
+            style={
+              0 === this.props.number
+                ? { backgroundColor: this.state.activeColor }
+                : { backgroundColor: this.state.notActiveColor }
+            }
+            onClick={() => this.changeNumber(0)}
+          >
+            0
           </button>
           <button className="checkButton" onClick={() => this.onCheck()}>
-            check
+            Check
           </button>
         </div>
       </div>
