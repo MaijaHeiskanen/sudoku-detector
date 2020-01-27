@@ -12,9 +12,8 @@ export default class Buttons extends Component {
     };
   }
 
-  changeType(isOwn) {
-    console.log("Changing isOwn to", isOwn);
-    this.setState({ isOwn: isOwn });
+  onChangeType(isOwn) {
+    this.props.onChangeType(isOwn);
   }
 
   changeNumber(number) {
@@ -85,23 +84,23 @@ export default class Buttons extends Component {
         <div>
           <button
             style={
-              !this.state.isOwn
+              !this.props.isOwn
                 ? { backgroundColor: this.state.activeColor }
                 : { backgroundColor: this.state.notActiveColor }
             }
             className="typeButton"
-            onClick={() => this.changeType(false)}
+            onClick={() => this.onChangeType(false)}
           >
             Hard number
           </button>
           <button
             style={
-              this.state.isOwn
+              this.props.isOwn
                 ? { backgroundColor: this.state.activeColor }
                 : { backgroundColor: this.state.notActiveColor }
             }
             className="typeButton"
-            onClick={() => this.changeType(true)}
+            onClick={() => this.onChangeType(true)}
           >
             My number
           </button>

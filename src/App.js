@@ -17,13 +17,16 @@ export default class App extends Component {
 
     this.state = {
       table: [...array],
-      number: 0
+      hardTable: [...array],
+      number: 0,
+      isOwn: false
     };
 
     this.onClear = this.onClear.bind(this);
     this.onCheck = this.onCheck.bind(this);
     this.onChangeNumber = this.onChangeNumber.bind(this);
     this.onValueChange = this.onValueChange.bind(this);
+    this.onChangeType = this.onChangeType.bind(this);
   }
 
   onChangeNumber(number) {
@@ -55,6 +58,18 @@ export default class App extends Component {
     let newTable = [...this.state.table];
     newTable[index] = number;
     this.setState({ table: newTable });
+
+    if (!this.state.isOwn) {
+      let newTable = [...this.state.hardTable];
+      newTable[index] = number;
+      this.setState({ hardTable: newTable });
+      //console.log("hardTable:", newTable);
+    }
+  }
+
+  onChangeType(isOwn) {
+    console.log("Changing isOwn to", isOwn);
+    this.setState({ isOwn: isOwn });
   }
 
   render() {
@@ -72,9 +87,11 @@ export default class App extends Component {
         </code>
         <Buttons
           onChangeNumber={this.onChangeNumber}
+          onChangeType={this.onChangeType}
           onClear={this.onClear}
           onCheck={this.onCheck}
           number={this.state.number}
+          isOwn={this.state.isOwn}
         />
         <SudokuTable
           table={this.state.table}
