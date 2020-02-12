@@ -7,6 +7,14 @@ table {
   padding: 0px;
 }
 
+.hardNumber {
+  font-weight: 900;
+}
+
+.ownNumber {
+  font-weight: normal;
+}
+
 th {
   border: 1px solid #282c34;
   border-collapse: collapse;

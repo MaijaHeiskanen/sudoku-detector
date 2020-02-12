@@ -49,7 +49,7 @@ export default class App extends Component {
     for (let i = 0; i < 81; i++) {
       array.push("0");
     }
-    this.setState({ table: [...array], number: 0 });
+    this.setState({ hardTable: [...array], table: [...array], number: 0 });
   }
 
   onValueChange(index, number) {
@@ -95,6 +95,7 @@ export default class App extends Component {
         />
         <SudokuTable
           table={this.state.table}
+          hardTable={this.state.hardTable}
           onValueChange={this.onValueChange}
           number={this.state.number}
         />
